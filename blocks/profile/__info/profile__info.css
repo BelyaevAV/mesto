@@ -1,0 +1,12 @@
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 58.2%;
+}
+
+@media (max-width: 800px) {
+  .profile__info {
+    width: 100%;
+  }
+}

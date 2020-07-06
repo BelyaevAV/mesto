@@ -1,0 +1,14 @@
+.popup__job {
+  border: none;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+  width: 83.2558139%;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 29.74px auto 0;
+  outline: none;
+}
+
+.popup__job:focus,
+.popup__job:active {
+  border: 2px solid blue
+}

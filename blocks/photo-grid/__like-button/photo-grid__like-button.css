@@ -1,0 +1,8 @@
+.photo-grid__like-button {
+  background-color: white;
+  border: none;
+  padding: 0;
+  height: 19px;
+  align-self: center;
+  cursor: pointer
+}
