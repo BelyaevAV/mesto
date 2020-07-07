@@ -10,7 +10,6 @@
   <div class="root">
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Лого">
-      <hr class="header__line">
     </header>
     <main class="content">
       <section class="profile">
@@ -18,11 +17,11 @@
         <div class="profile__info">
           <div class="profile__nameholder">
             <p class="profile__name">Жак-Ив Кусто</p>
-            <button class="profile__edit-button"><img class="profile__edit" src="./images/edit-icon.svg" alt="Редактировать"></button>
+            <button class="profile__edit-button" type="button"></button>
           </div>
            <p class="profile__job">Исследователь океана</p>
         </div>
-        <button class="profile__add-button"><img class="profile__add" src="./images/add-icon.svg" alt="Редактировать"></button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
         <ul class="photo-grid">
@@ -31,72 +30,70 @@
               <img class="photo-grid__img" src="./images/elements-karachaevsk.jpg" alt="Карачаевск">
               <figcaption class="photo-grid__textblock">
                 <p class="photo-grid__text">Карачаевск</p>
-                <button class="photo-grid__like-button"><img class="photo-grid__hearticon" src="./images/heart-icon.svg" alt="Сердце"></button>
+                <button class="photo-grid__like-button" type="button"></button>
               </figcaption>
-            </figure class="photo-grid__figure">
+            </figure>
           </li>
           <li class="photo-grid__element">
             <figure class="photo-grid__figure">
               <img class="photo-grid__img" src="./images/elements-elbrus.jpg" alt="Эльбрус">
               <figcaption class="photo-grid__textblock">
                 <p class="photo-grid__text">Эльбрус</p>
-                <button class="photo-grid__like-button"><img class="photo-grid__hearticon" src="./images/heart-icon.svg" alt="Сердце"></button>
+                <button class="photo-grid__like-button" type="button"></button>
               </figcaption>
-            </figure class="photo-grid__figure">
+            </figure>
           </li>
           <li class="photo-grid__element">
             <figure class="photo-grid__figure">
               <img class="photo-grid__img" src="./images/elements-dombay.jpg" alt="Домбай">
               <figcaption class="photo-grid__textblock">
                 <p class="photo-grid__text">Домбай</p>
-                <button class="photo-grid__like-button"><img class="photo-grid__hearticon" src="./images/heart-icon.svg" alt="Сердце"></button>
+                <button class="photo-grid__like-button" type="button"></button>
               </figcaption>
-            </figure class="photo-grid__figure">
+            </figure>
           </li>
           <li class="photo-grid__element">
             <figure class="photo-grid__figure">
               <img class="photo-grid__img" src="./images/elements-elbrus.jpg" alt="Эльбрус">
               <figcaption class="photo-grid__textblock">
                 <p class="photo-grid__text">Эльбрус</p>
-                <button class="photo-grid__like-button"><img class="photo-grid__hearticon" src="./images/heart-icon.svg" alt="Сердце"></button>
+                <button class="photo-grid__like-button" type="button"></button>
               </figcaption>
-            </figure class="photo-grid__figure">
+            </figure>
           </li>
           <li class="photo-grid__element">
             <figure class="photo-grid__figure">
               <img class="photo-grid__img" src="./images/elements-dombay.jpg" alt="Домбай">
             <figcaption class="photo-grid__textblock">
               <p class="photo-grid__text">Домбай</p>
-              <button class="photo-grid__like-button"><img class="photo-grid__hearticon" src="./images/heart-icon.svg" alt="Сердце"></button>
+              <button class="photo-grid__like-button" type="button"></button>
             </figcaption>
-            </figure class="photo-grid__figure">
+            </figure>
           </li>
           <li class="photo-grid__element">
             <figure class="photo-grid__figure">
               <img class="photo-grid__img" src="./images/elements-karachaevsk.jpg" alt="Карачаевск">
               <figcaption class="photo-grid__textblock">
                 <p class="photo-grid__text">Карачаево-Черкесия</p>
-                <button class="photo-grid__like-button"><img class="photo-grid__hearticon" src="./images/heart-icon.svg" alt="Сердце"></button>
+                <button class="photo-grid__like-button" type="button"></button>
               </figcaption>
-            </figure class="photo-grid__figure">
+            </figure>
           </li>
         </ul>
       </section>
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
       </footer>
-      <section class="overlay">
-        <div class="popup">
-          <button class="popup__close" ><img class="popup__close-icon" src="./images/сlose-icon.svg" alt="Закрыть"></button>
-          <form class="popup__form"> 
-            <h2 class="popup__heading">Редактировать профиль</h2>
-            <input type="text" class="popup__name">
-            <input type="text" class="popup__job">
-            <button class="popup__save">
-            Сохранить
-            </button>
-          </form>
-        </div>
+      <section class="popup">
+        <form class="popup__form"> 
+          <button type="button" class="popup__close" ></button>
+          <h2 class="popup__heading">Редактировать профиль</h2>
+          <input type="text" class="popup__input" id="name">
+          <input type="text" class="popup__input" id="job">
+          <button class="popup__save">
+          Сохранить
+          </button>
+        </form>
       </section>
     </main>
   </div>

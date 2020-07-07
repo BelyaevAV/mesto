@@ -1,22 +1,25 @@
 
-let popup = document.querySelector('.overlay'),
-    popupToggle = document.querySelector('.profile__edit-button'),
+let popup = document.querySelector('.popup'),
+    popupEdit = document.querySelector('.profile__edit-button'),
     popupClose = document.querySelector('.popup__close'),
     namePlace = document.querySelector('.profile__name'),
     jobPlace = document.querySelector('.profile__job'),
-    nameInput = document.querySelector('.popup__name'),
-    jobInput = document.querySelector('.popup__job'),
+    nameInput = document.querySelector('#name'),
+    jobInput = document.querySelector('#job'),
     popupSave = document.querySelector('.popup__save')
 
-    popupToggle.onclick = function() {
-        popup.style.display='block';
-        jobInput.value = jobPlace.textContent
-        nameInput.value = namePlace.textContent
-    };
+function popupToggle () {
+     popup.classList.toggle('popup_opened');
+ 
+}
 
-    popupClose.onclick = function() {
-        popup.style.display='none'
-    };
+popupEdit.addEventListener('click', function() {
+    popupToggle();
+    jobInput.value = jobPlace.textContent
+    nameInput.value = namePlace.textContent
+    });
+
+popupClose.addEventListener('click', popupToggle);
 
 let formElement = document.querySelector('.popup__form');// Воспользуйтесь методом querySelector()
 
@@ -32,7 +35,7 @@ function formSubmitHandler (evt) {
     // Вставьте новые значения с помощью textContent
     namePlace.textContent = nameInput.value;
     jobPlace.textContent = jobInput.value;
-    popup.style.display='none'
+    popupToggle();
     };
 
 

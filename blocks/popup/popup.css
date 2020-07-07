@@ -1,20 +1,15 @@
 @import url('./__close/popup__close.css');
 @import url('./__form/popup__form.css');
 @import url('./__heading/popup__heading.css');
-@import url('./__name/popup__name.css');
+@import url('./__input/popup__input.css');
 @import url('./__save/popup__save.css');
-@import url('./__job/popup__job.css');
-@import url('./__close-icon/popup__close-icon.css');
 
 .popup{
-  
-  margin: 8.5% auto 0;
-  width: 33.59375%;
-  max-width: 430px;
-}
-
-@media (max-width: 680px) {
-  .popup {
-    width: 70%;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(1, 1, 1, 0.5);
+  width: 100%;
+  height: 100vh;
+  display: none;
 }

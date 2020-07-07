@@ -1,8 +1,8 @@
 .profile__info {
   display: flex;
   flex-direction: column;
-  justify-content: start;
   width: 58.2%;
+  align-content: space-between;
 }
 
 @media (max-width: 800px) {
