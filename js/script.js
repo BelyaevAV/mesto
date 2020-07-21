@@ -1,27 +1,26 @@
-
-const popupProfileEdit = document.querySelector('.popup_type_edit'),
-    popupEditClose = popupProfileEdit.querySelector('.popup__close'),
-    editFormElement = popupProfileEdit.querySelector('.popup__form'),
-    popupCardAdd = document.querySelector('.popup_type_add'),
-    popupAddClose = popupCardAdd.querySelector('.popup__close'),
-    addFormElement = popupCardAdd.querySelector('.popup__form'),
-    popupImage = document.querySelector('.popup_type_photo'),
-    popupFullImage = popupImage.querySelector('.popup__full-img'),
-    popupFullText = popupImage.querySelector('.popup__full-text'),
-    popupFullClose = popupImage.querySelector('.popup__close')
-    placeInput = document.querySelector('#place'),
-    imgInput = document.querySelector('#place-img'),
-    popupAdd = document.querySelector('.profile__add-button'),
-    popupEdit = document.querySelector('.profile__edit-button'),
-    namePlace = document.querySelector('.profile__name'),
-    jobPlace = document.querySelector('.profile__job'),
-    nameInput = document.querySelector('#name'),
-    jobInput = document.querySelector('#job'),
-    photoText = document.querySelector('photo-grid__text'),
-    photoImg = document.querySelector('photo-grid__img'),
-    photoCards = document.querySelector('.photo-grid'),
-    cardTemplate = document.querySelector('.photo-grid__template'),
-    initialCards = [
+const popupProfileEdit = document.querySelector('.popup_type_edit');
+const popupEditClose = popupProfileEdit.querySelector('.popup__close');
+const editFormElement = popupProfileEdit.querySelector('.popup__form');
+const popupCardAdd = document.querySelector('.popup_type_add');
+const popupAddClose = popupCardAdd.querySelector('.popup__close');
+const addFormElement = popupCardAdd.querySelector('.popup__form');
+const popupImage = document.querySelector('.popup_type_photo');
+const popupFullImage = popupImage.querySelector('.popup__full-img');
+const popupFullText = popupImage.querySelector('.popup__full-text');
+const popupFullClose = popupImage.querySelector('.popup__close');
+const placeInput = document.querySelector('#place');
+const imgInput = document.querySelector('#place-img');
+const popupAdd = document.querySelector('.profile__add-button');
+const popupEdit = document.querySelector('.profile__edit-button');
+const namePlace = document.querySelector('.profile__name');
+const jobPlace = document.querySelector('.profile__job');
+const nameInput = document.querySelector('#name');
+const jobInput = document.querySelector('#job');
+const photoText = document.querySelector('photo-grid__text');
+const photoImg = document.querySelector('photo-grid__img');
+const photoCards = document.querySelector('.photo-grid');
+const cardTemplate = document.querySelector('.photo-grid__template');
+const initialCards = [
         {
             name: 'Архыз',
             link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -85,7 +84,11 @@ function formSubmitHandlerEdit (evt) {
 
 editFormElement.addEventListener('submit', formSubmitHandlerEdit);
 
-function photoAdd(name, link) {
+function renderPhoto(card) {
+    photoCards.prepend(card);
+};
+
+function addPhoto(name, link) {
     const photoElement = cardTemplate.content.cloneNode(true);
     photoElement.querySelector('.photo-grid__img').src = link;
     photoElement.querySelector('.photo-grid__text').textContent = name;
@@ -101,18 +104,17 @@ function photoAdd(name, link) {
         popupFullImage.src = evt.target.closest('.photo-grid__img').src;
         popupFullImage.alt = evt.target.closest('.photo-grid__img').alt;
         popupFullText.textContent = name;
-
     })
-    photoCards.prepend(photoElement)
+    return photoElement
 };
 
 initialCards.forEach(function initialPage(item){
-    photoAdd(item.name, item.link);
+    renderPhoto(addPhoto(item.name, item.link));
 });
 
 function formSubmitHandlerAdd (evt) {
     evt.preventDefault();
-    photoAdd(placeInput.value, imgInput.value);
+    renderPhoto(addPhoto(placeInput.value, imgInput.value));
     popupToggle(popupCardAdd);
 };
 
