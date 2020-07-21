@@ -25,78 +25,56 @@
       </section>
       <section class="elements">
         <ul class="photo-grid">
-          <li class="photo-grid__element">
-            <figure class="photo-grid__figure">
-              <img class="photo-grid__img" src="./images/elements-karachaevsk.jpg" alt="Карачаевск">
-              <figcaption class="photo-grid__textblock">
-                <p class="photo-grid__text">Карачаевск</p>
-                <button class="photo-grid__like-button" type="button"></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo-grid__element">
-            <figure class="photo-grid__figure">
-              <img class="photo-grid__img" src="./images/elements-elbrus.jpg" alt="Эльбрус">
-              <figcaption class="photo-grid__textblock">
-                <p class="photo-grid__text">Эльбрус</p>
-                <button class="photo-grid__like-button" type="button"></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo-grid__element">
-            <figure class="photo-grid__figure">
-              <img class="photo-grid__img" src="./images/elements-dombay.jpg" alt="Домбай">
-              <figcaption class="photo-grid__textblock">
-                <p class="photo-grid__text">Домбай</p>
-                <button class="photo-grid__like-button" type="button"></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo-grid__element">
-            <figure class="photo-grid__figure">
-              <img class="photo-grid__img" src="./images/elements-elbrus.jpg" alt="Эльбрус">
-              <figcaption class="photo-grid__textblock">
-                <p class="photo-grid__text">Эльбрус</p>
-                <button class="photo-grid__like-button" type="button"></button>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="photo-grid__element">
-            <figure class="photo-grid__figure">
-              <img class="photo-grid__img" src="./images/elements-dombay.jpg" alt="Домбай">
-            <figcaption class="photo-grid__textblock">
-              <p class="photo-grid__text">Домбай</p>
-              <button class="photo-grid__like-button" type="button"></button>
-            </figcaption>
-            </figure>
-          </li>
-          <li class="photo-grid__element">
-            <figure class="photo-grid__figure">
-              <img class="photo-grid__img" src="./images/elements-karachaevsk.jpg" alt="Карачаевск">
-              <figcaption class="photo-grid__textblock">
-                <p class="photo-grid__text">Карачаево-Черкесия</p>
-                <button class="photo-grid__like-button" type="button"></button>
-              </figcaption>
-            </figure>
-          </li>
         </ul>
       </section>
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup">
+      <section class="popup popup_type_edit">
         <form class="popup__form"> 
           <button type="button" class="popup__close" ></button>
           <h2 class="popup__heading">Редактировать профиль</h2>
-          <input type="text" class="popup__input" id="name">
-          <input type="text" class="popup__input" id="job">
+          <input type="text" class="popup__input" placeholder="Имя" id="name">
+          <input type="text" class="popup__input" placeholder="Род занятий" id="job">
           <button class="popup__save">
           Сохранить
           </button>
         </form>
       </section>
+      <section class="popup popup_type_add">
+        <form class="popup__form"> 
+          <button type="button" class="popup__close" ></button>
+          <h2 class="popup__heading">Новое место</h2>
+          <input type="text" class="popup__input" placeholder="Название" id="place">
+          <input type="text" class="popup__input" placeholder="Ссылка на картинку" id="place-img">
+          <button class="popup__save">
+          Создать
+          </button>
+        </form>
+      </section>
+      <section class="popup popup_type_photo">
+        <div class="popup__photo">
+          <figure class="popup__figure">
+            <button type="button" class="popup__close"></button>
+            <img class="popup__full-img" src="#" alt="#">
+            <figcaption class="popup__full-text"></figcaption>
+          </figure>
+        </div>
+      </section>
     </main>
   </div>
+  <template class="photo-grid__template">
+    <li class="photo-grid__element">
+      <button class="photo-grid__delete-button" type="button"></button>
+      <figure class="photo-grid__figure">
+        <img class="photo-grid__img" src="#" alt="#">
+        <figcaption class="photo-grid__textblock">
+          <p class="photo-grid__text"></p>
+          <button class="photo-grid__like-button" type="button"></button>
+        </figcaption>
+      </figure>
+    </li>
+  </template>
   <script src="./js/script.js"></script>
 </body>
 </html>

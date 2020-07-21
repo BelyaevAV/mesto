@@ -14,3 +14,9 @@
   opacity: 0.8;
   transition: all 1s ease-out;
 }
+
+@media (max-width: 680px) {
+  .popup__save {
+    margin: 36px auto 30px;
+  }
+}

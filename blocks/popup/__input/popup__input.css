@@ -17,3 +17,15 @@
 .popup__input:nth-of-type(1) {
   margin-top: 54px;
 }
+
+@media (max-width: 680px) {
+  .popup__input:nth-of-type(1) {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 680px) {
+  .popup__input {
+    margin-top: 20px;
+  }
+}
