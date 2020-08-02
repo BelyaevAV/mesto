@@ -5,23 +5,13 @@
   font-size: 14px;
   line-height: 17px;
   outline: none;
-  margin: 29.74px auto 0;
+  margin: 30px auto 0;
   padding-bottom: 13.3px;
 }
 
 .popup__input:focus,
 .popup__input:active {
   outline: 2px solid blue
-}
-
-.popup__input:nth-of-type(1) {
-  margin-top: 54px;
-}
-
-@media (max-width: 680px) {
-  .popup__input:nth-of-type(1) {
-    margin-top: 36px;
-  }
 }
 
 @media (max-width: 680px) {

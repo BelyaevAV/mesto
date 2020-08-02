@@ -1,6 +1,7 @@
 const popupProfileEdit = document.querySelector('.popup_type_edit');
 const popupEditClose = popupProfileEdit.querySelector('.popup__close');
 const editFormElement = popupProfileEdit.querySelector('.popup__form');
+const editSave = popupProfileEdit.querySelector('.popup__save');
 const popupCardAdd = document.querySelector('.popup_type_add');
 const popupAddClose = popupCardAdd.querySelector('.popup__close');
 const addFormElement = popupCardAdd.querySelector('.popup__form');
@@ -20,6 +21,7 @@ const photoText = document.querySelector('photo-grid__text');
 const photoImg = document.querySelector('photo-grid__img');
 const photoCards = document.querySelector('.photo-grid');
 const cardTemplate = document.querySelector('.photo-grid__template');
+const errorSpan = document.querySelector('#name-error');
 const initialCards = [
         {
             name: 'Архыз',
@@ -49,11 +51,9 @@ const initialCards = [
 
 function popupToggle (popup) {
     popup.classList.toggle('popup_opened');
- 
 };
 
 popupAdd.addEventListener('click', function() {
-    addFormElement.reset();
     popupToggle(popupCardAdd);
 });
 
@@ -64,16 +64,59 @@ popupEdit.addEventListener('click', function() {
 });
 
 popupEditClose.addEventListener('click', function() {
-    popupToggle(popupProfileEdit)
+    hideInputError(editFormElement, nameInput);
+    hideInputError(editFormElement, jobInput);
+    editSave.classList.remove('popup__save_inactive');
+    editSave.disabled = false;
+    popupToggle(popupProfileEdit);
 } );
 
 popupAddClose.addEventListener('click', function() {
     popupToggle(popupCardAdd)
+    addFormElement.reset();
+    hideInputError(addFormElement, placeInput);
+    hideInputError(addFormElement, imgInput);
 } );
 
 popupFullClose.addEventListener('click', function() {
     popupToggle(popupImage)
 } );
+
+document.addEventListener ('click', function(evt) {
+    if (evt.target == popupProfileEdit) {
+       popupToggle(popupProfileEdit)
+    }
+}); 
+
+document.addEventListener ('click', function(evt) {
+    if (evt.target == popupCardAdd) {
+       popupToggle(popupCardAdd)
+    }
+});
+
+document.addEventListener ('click', function(evt) {
+    if (evt.target == popupImage) {
+       popupToggle(popupImage)
+    }
+}); 
+
+document.addEventListener ('keydown', function(evt) {
+    if (evt.key == 'Escape' && popupProfileEdit.classList.contains('popup_opened')) {
+        popupToggle(popupProfileEdit);
+    }
+});
+
+document.addEventListener ('keydown', function(evt) {
+    if (evt.key == 'Escape' && popupCardAdd.classList.contains('popup_opened')) {
+        popupToggle(popupCardAdd);
+    }
+});
+
+document.addEventListener ('keydown', function(evt) {
+    if (evt.key == 'Escape' && popupImage.classList.contains('popup_opened')) {
+        popupToggle(popupImage);
+    }
+});
 
 function formSubmitHandlerEdit (evt) {
     evt.preventDefault();
@@ -101,8 +144,8 @@ function addPhoto(name, link) {
     })
     photoElement.querySelector('.photo-grid__img').addEventListener('click', function(evt) {
         popupToggle(popupImage);
-        popupFullImage.src = evt.target.closest('.photo-grid__img').src;
-        popupFullImage.alt = evt.target.closest('.photo-grid__img').alt;
+        popupFullImage.src = evt.target.src;
+        popupFullImage.alt = evt.target.alt;
         popupFullText.textContent = name;
     })
     return photoElement

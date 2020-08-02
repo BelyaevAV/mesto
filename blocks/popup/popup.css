@@ -7,6 +7,12 @@
 @import url('./__figure/popup__figure.css');
 @import url('./__full-text/popup__full-text.css');
 @import url('./__photo/popup__photo.css');
+@import url('./__input-error/popup__input-error.css');
+@import url('./__input/_type/popup__input_type_error.css');
+@import url('./__input-error/_active/popup__input-error_active.css');
+@import url('./__save/_inactive/popup__save_inactive.css');
+@import url('./__field/popup__field.css');
+@import url('./__fieldset/popup__fieldset.css');
 
 .popup{
   position: fixed;
