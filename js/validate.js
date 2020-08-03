@@ -55,7 +55,7 @@ function enableValidation () {
     });
     const fieldsetList = Array.from(formElement.querySelectorAll('.popup__fieldset'));
     fieldsetList.forEach((fieldSet) => {
-    setEventListeners(formElement)
+    setEventListeners(formElement);
     });
   });
 };
