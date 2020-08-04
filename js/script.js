@@ -48,7 +48,6 @@ function editCloseNoError () {
 
 popupAdd.addEventListener('click', function() {
     popupToggle(popupCardAdd);
-    
 });
 
 popupEdit.addEventListener('click', function() {
@@ -131,8 +130,7 @@ initialCards.forEach(function (item){
 function formSubmitHandlerAdd (evt) {
     evt.preventDefault();
     renderPhoto(createCard(placeInput.value, imgInput.value));
-    popupToggle(popupCardAdd);
-    addFormElement.reset();
+    addCloseNoError()
 };
 
 addFormElement.addEventListener('submit', formSubmitHandlerAdd);
