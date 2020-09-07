@@ -1,6 +1,4 @@
-export {FormValidator}
-
-class FormValidator {
+export default class FormValidator {
   constructor (formElement, config) {
     this._formElement = formElement;
     this._inputSelector = config.inputSelector;
@@ -60,12 +58,10 @@ class FormValidator {
   };
 
   enableValidation() {
-    const formList = Array.from(document.querySelectorAll(this._formSelector));
-    formList.forEach((formElement) => {
-      formElement.addEventListener('submit', (evt) => {
+    this._formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });
-  });
+  
     this._setEventListeners();
   };
 };
