@@ -16,19 +16,6 @@ export default class Popup {
     this._popup.removeEventListener('click', this._handleOverlayClose.bind(this));
   }
 
-  _removeErrors() {
-    const inputs = Array.from(this._popup.querySelectorAll('.popup__input'));
-    inputs.forEach(item => {
-      item.classList.remove('popup__input_type_error');
-    });
-
-    const errors = Array.from(this._popup.querySelectorAll('.popup__input-error'));
-    errors.forEach(item => {
-      item.classList.remove('popup__input-error_active');
-      item.textConten = null;
-    })
-  };
-
   _handleEscClose(evt) {
     if (evt.key === 'Escape') {
       this.close();

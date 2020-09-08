@@ -16,7 +16,6 @@ export default class Card {
     return cardElement;
   };
 
-
   _handleLikeIcon() {
     this._element.querySelector('.photo-grid__like-button').classList.toggle('photo-grid__like-button_liked');
   }
@@ -43,9 +42,10 @@ export default class Card {
   generateCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
+    const photo = this._element.querySelector('.photo-grid__img')
 
-    this._element.querySelector('.photo-grid__img').src = this._image;
-    this._element.querySelector('.photo-grid__img').alt = this._title;
+    photo.src = this._image;
+    photo.alt = this._title;
     this._element.querySelector('.photo-grid__text').textContent = this._title;
 
     return this._element;
