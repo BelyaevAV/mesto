@@ -5,16 +5,15 @@ export default class userInfo {
   }
 
   getUserInfo() {
-    this._userCard = {
-      name: this._name.textContent,
-      job: this._job.textContent
-    }
-    return this._userCard;
+    const userCard = {}
+    userCard.name = this._name.textContent,
+    userCard.job = this._job.textContent
+    return userCard;
   }
 
-  setUserInfo(name,job) {
-    this._name.textContent = name.value;
-    this._job.textContent = job.value;
+  setUserInfo({name, job}) {
+    this._name.textContent = name;
+    this._job.textContent = job;
   }
 }
 

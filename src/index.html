@@ -12,7 +12,7 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="./images/avatar-kusto.jpg" alt="Аватар">
+        <div class="profile__avatar"></div>
         <div class="profile__info">
           <div class="profile__nameholder">
             <p class="profile__name">Жак-Ив Кусто</p>
@@ -42,9 +42,7 @@
               <input required maxlength="200" minlength="2" type="text" class="popup__input" placeholder="Род занятий" id="job">
               <span id="job-error" class="popup__input-error"></span>
             </label>
-            <button class="popup__save">
-              Сохранить
-            </button>
+            <button class="popup__save">Сохранить</button>
           </fieldset>
         </form>
       </section>
@@ -61,9 +59,7 @@
               <input required type="url" class="popup__input" placeholder="Ссылка на картинку" id="place-img">
               <span id="place-img-error" class="popup__input-error"></span>
             </label>
-            <button class="popup__save popup__save_inactive" disabled>
-              Создать
-            </button>
+            <button class="popup__save popup__save_inactive" disabled>Создать</button>
           </fieldset>
         </form>
       </section>
@@ -76,6 +72,27 @@
           </figure>
         </div>
       </section>
+      <section class="popup popup_type_confirm">
+        <form class="popup__form"> 
+          <button type="button" class="popup__close" ></button>
+          <h2 class="popup__heading">Вы уверены?</h2>
+            <button class="popup__save">Да</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="popup popup_type_avatar">
+        <form class="popup__form" novalidate> 
+          <button type="button" class="popup__close" ></button>
+          <h2 class="popup__heading">Обновить аватар</h2>
+          <fieldset class="popup__fieldset">
+            <label class="popup__field">
+              <input required type="url" class="popup__input" placeholder="Ссылка на аватар" id="avatar">
+              <span id="avatar-error" class="popup__input-error"></span>
+            </label>
+            <button class="popup__save popup__save_inactive" disabled>Сохранить</button>
+          </fieldset>
+        </form>
+      </section>
     </main>
   </div>
   <template class="photo-grid__template">
@@ -85,7 +102,10 @@
         <img class="photo-grid__img" src="#" alt="#">
         <figcaption class="photo-grid__textblock">
           <p class="photo-grid__text"></p>
-          <button class="photo-grid__like-button" type="button"></button>
+          <div class="photo-grid__likeblock">
+            <button class="photo-grid__like-button" type="button"></button>
+            <p class="photo-grid__like-counter">#</p>
+          </div>
         </figcaption>
       </figure>
     </li>

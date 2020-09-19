@@ -8,6 +8,7 @@
   color: white;
   margin: 48px auto 36.51px;
   cursor: pointer;
+  padding: 0;
 }
 
 .popup__save:hover {
