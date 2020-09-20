@@ -116,7 +116,9 @@ function handleEdit() {
     .then((res) => {
         user.setUserInfo({name: res.name, job: res.about});
     })
-    .catch((err) => console.log(err))
+    .catch((err) => {
+        console.log(err)
+    })
     .finally(() => {
         popupProfileEdit.querySelector('.popup__save').textContent = 'Сохранить'
         this.close();
